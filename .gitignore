@@ -1,2 +1,8 @@
 *.log
 .DS_Store
+
+# Datos personales y respaldos (no se publican; quedan en tu disco)
+**/RespaldoRestore/backup/
+*.rar
+*.docx
+*.pdf
