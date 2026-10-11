@@ -1,0 +1,646 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif; /* Más común y compatible */
+  margin: 0;
+  background-color: #f8f9fa; /* Color de fondo muy suave */
+  color: #343a40; /* Color de texto principal */
+  line-height: 1.6; /* Mejora la legibilidad del texto */
+}
+
+/* Barra de navegación superior */
+.logo-nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  color: white;
+}
+
+.logo-link {
+  text-decoration: none;
+  font-size: 2.5rem; /* Tamaño de fuente grande para el logo */
+  color: #084298; /* Un azul más profundo y profesional */
+  font-family: 'Times New Roman', serif;
+  font-weight: bold; /* Texto en negrita para el logo */
+  transition: color 0.2s ease; /* Transición suave para el color */
+}
+
+.logo-link:hover {
+  color: #007bff; /* Cambia a un azul más brillante al pasar el mouse */
+}
+
+.logo-placeholder {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  background: url(../css/logo1.jpg) center/cover; /* Mantiene el logo de fondo */
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.15); /* Sombra más suave */
+}
+
+.logo-img {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80px; /* Aumentado de 50px a 80px */
+  width: auto;
+  max-width: 250px; /* Aumentado de 180px a 250px */
+  object-fit: contain;
+  z-index: 1001;
+  opacity: 1;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1)); /* Sutil sombra para mejor contraste */
+}
+
+.logo-placeholder:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.03);
+}
+/* Menú principal */
+.menu {
+  position: sticky; /* El menú se pega en la parte superior al hacer scroll */
+  top: 0;
+  background-color: rgba(13, 71, 161, 0.95); /* Ligeramente más opaco */
+  padding: 15px 30px; /* Aumenta el padding vertical */
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra un poco más pronunciada */
+  border-bottom: 1px solid rgba(13, 71, 161, 0.3); /* Borde inferior sutil */
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px; /* Reduce un poco el espacio entre elementos */
+  justify-content: center; /* Centra los elementos del menú */
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600; /* Texto en negrita para los enlaces del menú */
+  padding: 10px 15px; /* Aumenta el padding */
+  border-radius: 6px; /* Bordes ligeramente redondeados */
+  transition: all 0.3s ease; /* Transición suave para todas las propiedades */
+  display: block; /* Asegura que el padding funcione correctamente */
+}
+
+.menu-link:hover {
+  background-color: rgba(255, 255, 255, 0.95); /* Blanco ligeramente transparente al pasar el mouse */
+  color: #084298; /* Cambia al azul más oscuro al pasar el mouse */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una ligera sombra al hacer hover */
+}
+
+.submenu {
+  display: none; /* El submenú está oculto por defecto */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 220px; /* Aumenta el ancho del submenú */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada para el submenú */
+  border-radius: 8px; /* Bordes más redondeados */
+  padding: 10px 0; /* Aumenta el padding vertical */
+  z-index: 1001; /* Asegura que el submenú esté por encima de otros elementos */
+  border: 1px solid #eee; /* Añade un borde */
+}
+
+.menu-item:hover .submenu {
+  display: block; /* Muestra el submenú al pasar el mouse sobre el elemento de menú padre */
+  animation: fadeIn 0.3s ease; /* Añade una animación de aparición */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.submenu-link {
+  display: block;
+  padding: 12px 25px; /* Aumenta el padding */
+  color: #084298; /* Texto del submenú en azul oscuro */
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease; /* Transiciones para el fondo y el color del texto */
+  border-bottom: 1px solid #f8f9fa; /* Añade un borde inferior a cada elemento del submenú */
+}
+
+.submenu-link:hover {
+  background-color: #f0f0f0; /* Color de fondo gris claro al pasar el mouse */
+  color: #007bff; /* Cambia a azul brillante al pasar el mouse */
+}
+
+.submenu-link:last-child {
+  border-bottom: none; /* Elimina el borde del último elemento del submenú */
+}
+
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 40px auto; /* Aumenta el margen superior e inferior */
+  padding: 0 20px;
+}
+
+/* Formulario */
+form {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Campos superiores del formulario */
+.form-top-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 768px) {
+  .form-top-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+h2 {
+  color: #084298; /* Azul más oscuro para el título */
+  text-align: center;
+  margin: 0 0 30px; /* Aumenta el margen inferior */
+  font-size: 2.2rem; /* Aumenta el tamaño de la fuente del título */
+  font-weight: 700; /* Hace el título en negrita */
+  letter-spacing: -0.02em;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.95rem;
+  display: block; /* Asegura que la etiqueta se muestre como bloque */
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+input:focus,
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); /* Sombra de enfoque más suave */
+  outline: none;
+}
+
+/* Contenedor principal de estudiantes */
+#formContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin: 20px 0 0;
+  box-sizing: border-box;
+  align-items: start;
+}
+
+/* Estilos para las secciones de estudiantes */
+.student-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.student-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.student-section h3 {
+  margin-top: 0;
+  color: #084298;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.student-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.student-fields .input-group {
+  margin-bottom: 10px;
+}
+
+.student-fields label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #495057;
+}
+
+/* Mejoras para los botones */
+button, .btn-buscar {
+  background-color: #084298;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+button:hover, .btn-buscar:hover {
+  background-color: #063d82;
+}
+
+/* Estilos para los contenedores de cédula */
+.cedula-container {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+
+.cedula-container .tipo-doc {
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.cedula-container .cedula-input {
+  flex-grow: 1;
+}
+
+/* Estilos para los botones de acción */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.buttons button[type="reset"] {
+  background-color: #6c757d;
+}
+
+.buttons button[type="reset"]:hover {
+  background-color: #5a6268;
+}
+
+/* Asegurar que los campos de entrada ocupen todo el ancho disponible */
+.input-group input,
+.input-group select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mejorar la apariencia de los selects */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23084B8A%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 30px;
+}
+
+/* Estilo para el botón de búsqueda */
+.btn-buscar {
+  margin-top: 5px;
+  width: 100%;
+  max-width: 150px;
+  align-self: flex-start;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1200px) {
+  #formContainer {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #formContainer {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .student-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+    padding: 20px 15px;
+  }
+  
+  .student-section {
+    padding: 15px;
+  }
+  
+  .student-fields {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn-buscar {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #formContainer {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  
+  .student-section {
+    padding: 12px;
+  }
+}
+
+/* Estilos específicos para select */
+select {
+  appearance: none; /* Elimina la flecha por defecto del select en algunos navegadores */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4z'%3E%3C/path%3E%3C/svg%3E"); /* Flecha personalizada */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Ajusta la posición de la flecha */
+  background-size: 12px; /* Tamaño de la flecha */
+  padding-right: 30px; /* Espacio para la flecha */
+}
+
+select:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23007bff' d='M2 0L0 2h4z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+/* Sección de estudiantes */
+/* Ya modificado arriba, esta es una segunda instancia que se eliminará o se ajustará si es diferente */
+/* Si esta sección es idéntica a la anterior, se puede eliminar. */
+/* Si es diferente, se debe revisar su propósito. Por ahora, la comentaré. */
+/*
+#formContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin-top: 10px;
+}
+*/
+
+.student-section {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Adjust width to allow centering */
+    max-width: 600px; /* Set a max-width for better responsiveness */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+#formContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+  width: 100%; /* Asegurar que ocupe todo el ancho */
+  margin-top: 10px;
+  padding: 10px; /* Añadir padding alrededor del contenedor */
+  box-sizing: border-box; /* Para que el padding no aumente el tamaño total */
+}
+
+.student-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.08rem;
+  color: #084298;
+}
+
+.input-group {
+  margin-bottom: 8px;
+}
+
+.cedula-container {
+  display: flex;
+  gap: 8px;
+}
+
+.notas-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; /* Aumenta el espacio entre las notas */
+  margin: 20px 0; /* Aumenta el margen vertical */
+}
+
+.notas-container .input-group {
+  margin-bottom: 0; /* Elimina el margen inferior de los input-group dentro de .notas-container */
+}
+
+.notas-container label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+
+/* Botones */
+.buttons {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px; /* Aumenta el margen superior */
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añade una ligera sombra a los botones */
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15); /* Aumenta la sombra al hacer hover */
+}
+
+button[type="reset"] {
+  background-color: #6c757d;
+  color: white;
+}
+
+button[type="reset"]:hover {
+  background-color: #5a6268;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15); /* Aumenta la sombra al hacer hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .menu-list {
+    gap: 20px;
+  }
+
+  .logo-link {
+    font-size: 2rem;
+  }
+
+  .logo-placeholder {
+    width: 80px;
+    height: 80px;
+    right: 20px;
+  }
+
+  .notas-container {
+    grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    padding: 10px 15px;
+  }
+
+  .menu-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo-nav {
+    padding: 10px 15px;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .logo-placeholder {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .notas-container {
+    grid-template-columns: 1fr; /* Cambia a 1 columna en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 1100px) {
+  #formContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+  }
+}
+
+@media (max-width: 900px) {
+  #formContainer {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+    padding: 18px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  #formContainer {
+    grid-template-columns: 1fr; /* 1 columna en móvil pequeño */
+    gap: 10px;
+  }
+  .student-section {
+    padding: 8px;
+  }
+  .cedula-container {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
