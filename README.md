@@ -22,3 +22,7 @@ Sistema Secretaria/
 1. Importar `secretaria.sql`.
 2. Configurar la conexión en `includes/`.
 3. Servir con Apache/PHP.
+
+## Contexto
+
+Sistema de secretaría desarrollado como práctica profesional: expedientes, usuarios e inventario en **PHP + MySQL**. El repositorio trae el código y el **esquema** de la base de datos, sin datos de personas (los respaldos y planillas quedan fuera).
